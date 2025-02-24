@@ -1,15 +1,20 @@
 const mongoose = require("mongoose");
 
 const ItinerarySchema = new mongoose.Schema({
-  id:Number,
+  id:{
+    type:Number,
+    required: [true, "ID is required"]
+  },
   title: String,
   State:String,
-  imgurl: [{
+  imgurl: [
+    {
     imgurl1: String,
     imgurl2: String,
     imgurl3: String,
     imgurl4: String,
-  }],
+  }
+],
   brief: String,
   duration: String,
   note: String,
@@ -69,21 +74,29 @@ const ItinerarySchema = new mongoose.Schema({
 
 
 const CardSchema = new mongoose.Schema({
+  id: String,
   title: String,
-  State:String,
-  imgurl: String,
+  State:{
+    type:String,
+    required: [true, "State is required"]
+  },
+  imgurl: {
+    type:String,
+    required: [true, "Image path is required"]
+  },
   duration: String,
   note: String,
   off: String,
-  price: Number,
+  price: {
+    type:Number,
+    required: [true, "Price is required"]
+  },
   Picuppoint: String,
   Droppoint: String,  
 });
 
 
-
 const Itinerary = mongoose.model("Itinerary", ItinerarySchema);
-
 const Card = mongoose.model("Card", CardSchema);
 module.exports = Itinerary;
 module.exports = Card;
