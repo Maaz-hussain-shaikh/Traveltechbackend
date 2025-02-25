@@ -1,7 +1,7 @@
 const Card = require("../models/Card");
 const Itinerary = require("../models/Itinerary");
-const cloudinary = require('../config/cloudinary');
 const jwt = require("jsonwebtoken");
+
 
 // ==========================login==============
 
