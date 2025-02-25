@@ -8,26 +8,33 @@ const ItinerarySchema = new mongoose.Schema({
   },
   state: {
     type: String,
-    required: true
+    required: true,
+    index: true,
+    
   },
   status: {
     type: String,
+    index: true,
     required: true
   },
   country: {
     type: String,
+    index: true,
     required: true
   },
   specialEvent: {
     type: String,
+    index: true,
     required: true
   },
   tag: {
     type: String,
+    index: true,
     required: true
   },
   typeoftrip: {
     type: String,
+    index: true,
     required: true
   },
   title: { type: String },

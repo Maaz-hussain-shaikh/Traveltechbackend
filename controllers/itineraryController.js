@@ -2,6 +2,7 @@ const Card = require("../models/Card");
 const Itinerary = require("../models/Itinerary");
 const cloudinary = require('../config/cloudinary');
 const jwt = require("jsonwebtoken");
+
 // ==========================login==============
 
 
@@ -43,6 +44,7 @@ exports.Getstatistic = async (req, res) => {
         res.status(500).json({ success: false, error: error.message });
     }
 };
+
 // Add Itinerary
 exports.createItinerary = async (req, res) => {
     try {
@@ -88,7 +90,7 @@ exports.createItinerary = async (req, res) => {
 exports.getCard = async (req, res) => {
     try {
         // Extract query parameters
-        const { state, country, specialEvent,status,tag,typeoftrip} = req.query;
+        const { state, country, specialEvent, status, tag, typeoftrip, page = 1, limit = 10 } = req.query;
     
         // Build the filter object dynamically
         const filter = {};
@@ -99,8 +101,26 @@ exports.getCard = async (req, res) => {
         if (tag) filter.tag = tag;
         if (typeoftrip) filter.typeoftrip = typeoftrip;
     
-        // Fetch cards based on the filter
-        const cards = await Card.find(filter);
+        // Calculate pagination values
+       
+    
+        // Fetch cards from the database
+        console.time('Database Query'); // Measure query time
+        const cards = await Card.find(filter, {
+            id: 1,
+            state: 1,
+            tag: 1,
+            typeoftrip: 1,
+            status: 1,
+            country: 1,
+            specialEvent: 1,
+            title: 1,
+            cardurl: 1,
+            duration: 1,
+            off: 1,
+            price: 1
+        })
+        console.timeEnd('Database Query'); // Log query time
     
         // If no cards are found, return a 404
         if (cards.length === 0) {
