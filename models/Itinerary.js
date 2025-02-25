@@ -1,102 +1,119 @@
 const mongoose = require("mongoose");
 
 const ItinerarySchema = new mongoose.Schema({
-  id:{
-    type:Number,
-    required: [true, "ID is required"]
-  },
-  title: String,
-  State:String,
-  imgurl: [
-    {
-    imgurl1: String,
-    imgurl2: String,
-    imgurl3: String,
-    imgurl4: String,
-  }
-],
-  brief: String,
-  duration: String,
-  note: String,
-  off: String,
-  Photos: String,
-  Quadprice: Number,
-  Tripleprice: Number,
-  Doubleprice: Number,
-  Batches: [{
-    id: Number,
-    date: String,
-    Extraprice: Number,
-  }],
-  Picuppoint: [{
-    location: String,
-    Extraprice: Number,
-    Time: String,
-  }],
-  Droppoint: [{
-    location: String,
-    Extraprice: Number,
-    Time: String,
-  }],
-  it: [{
-    Heading: String,
-    Schedule: String,
-  }],
-  inclusion: [{
-    name: String,
-    icon: String,
-    inc: String,
-  }],
-  exclusion: [{
-    name: String,
-    icon: String,
-    inc: String,
-  }],
-  thingstotake: [{
-    name: String,
-    icon: String,
-    inc: String,
-  }],
-  gentem: String,
-  Booking: [{
-    key: String,
-    description: String,
-  }],
-  Cancellation: [{
-    key: String,
-    description: String,
-  }],
-  FAQ: [{
-    question: String,
-    answer: String,
-  }],
-});
-
-
-const CardSchema = new mongoose.Schema({
-  id: String,
-  title: String,
-  State:{
-    type:String,
-    required: [true, "State is required"]
-  },
-  imgurl: {
-    type:String,
-    required: [true, "Image path is required"]
-  },
-  duration: String,
-  note: String,
-  off: String,
+  
   price: {
-    type:Number,
-    required: [true, "Price is required"]
+    type: Number,
+    required: true
   },
-  Picuppoint: String,
-  Droppoint: String,  
+  state: {
+    type: String,
+    required: true
+  },
+  status: {
+    type: String,
+    required: true
+  },
+  country: {
+    type: String,
+    required: true
+  },
+  specialEvent: {
+    type: String,
+    required: true
+  },
+  tag: {
+    type: String,
+    required: true
+  },
+  typeoftrip: {
+    type: String,
+    required: true
+  },
+  title: { type: String },
+  cardurl: { type: String },
+  imgurl: [{ type: String }],  // Array of image URLs
+  brief: { type: String },
+  duration: { type: String },
+  note: { type: String },
+  off: { type: String },
+  Photos: { type: String },
+  Quadprice: { type: Number },
+  Tripleprice: { type: Number },
+  Doubleprice: { type: Number },
+  Batches: [
+    {
+      id: { type: Number },
+      date: { type: String },
+      Extraprice: { type: Number }
+    }
+  ],
+  Picuppoint: [
+    {
+      location: { type: String },
+      Extraprice: { type: Number },
+      Time: { type: String }
+    }
+  ],
+  Droppoint: [
+    {
+      location: { type: String },
+      Extraprice: { type: Number },
+      Time: { type: String }
+    }
+  ],
+  it: [
+    {
+      Heading: { type: String },
+      Schedule: { type: String }
+    }
+  ],
+  inclusion: [
+    {
+      name: { type: String },
+      icon: { type: String },
+      inc: { type: String }
+    }
+  ],
+  exclusion: [
+    {
+      name: { type: String },
+      icon: { type: String },
+      inc: { type: String }
+    }
+  ],
+  thingstotake: [
+    {
+      name: { type: String },
+      icon: { type: String },
+      inc: { type: String }
+    }
+  ],
+  gentem: { type: String },
+  Booking: [
+    {
+      key: { type: String },
+      description: { type: String }
+    }
+  ],
+  Cancellation: [
+    {
+      key: { type: String },
+      description: { type: String }
+    }
+  ],
+  FAQ: [
+    {
+      question: { type: String },
+      answer: { type: String }
+    }
+  ]
 });
+
+
+
 
 
 const Itinerary = mongoose.model("Itinerary", ItinerarySchema);
-const Card = mongoose.model("Card", CardSchema);
 module.exports = Itinerary;
-module.exports = Card;
+

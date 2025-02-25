@@ -16,7 +16,7 @@ mongoose.connect(process.env.MONGO_URI)
 
 // Routes Import
 const itineraryRoutes = require("./routes/itineraryRoutes");
-app.use("/api/itineraries", itineraryRoutes);
+app.use("/traveltech/api", itineraryRoutes);
 
 // Start Server
 const PORT = process.env.PORT || 5000;
