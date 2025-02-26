@@ -148,9 +148,29 @@ exports.getItineraries = async (req, res) => {
       }
 };
 
-// ====================get imgs================
+// ====================delete itinerary================
 
+exports.deleteItinerary = async (req, res) => {
+    try {
+      const itineraryId = req.params.id;
   
+      // Find the itinerary
+      const itinerary = await Itinerary.findById(itineraryId);
+      if (!itinerary) {
+        return res.status(404).json({ message: 'Itinerary not found' });
+      }
+  
+      // Delete the associated card
+      await Card.findOneAndDelete({ id: itineraryId });
+  
+      // Delete the itinerary
+      await Itinerary.findByIdAndDelete(itineraryId);
+  
+      res.status(200).json({ message: 'Itinerary and associated card deleted successfully' });
+    } catch (error) {
+      res.status(500).json({ message: error.message });
+    }
+  };
 // ===========================AddRiveiw=======================
 
 
