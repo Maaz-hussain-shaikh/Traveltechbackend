@@ -9,11 +9,11 @@ const router = express.Router();
 
 // =========all POST req====
 router.post("/login", login);
-router.post("/Getstatistic", Getstatistic);
 router.post("/add",authtoken, createItinerary);
 router.post("/addimgs",authtoken,upload.single("image"),uploadImage);
 
 // =============all get req========
+router.get("/Getstatistic", Getstatistic);
 router.get("/Information/:id",authtoken, getItineraries);
 router.get("/getCards",authtoken, getCard);
 

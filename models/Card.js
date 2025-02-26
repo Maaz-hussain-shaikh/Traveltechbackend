@@ -33,7 +33,10 @@ const CardSchema = new mongoose.Schema({
       index: true,
       required: true
     },
-    cardurl: { type: String },
+    cardurl: {
+      type: String,
+      required: true
+    },
     duration: { type: String },
     off: { type: String },
     price: { type: Number, required: true }
