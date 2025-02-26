@@ -97,18 +97,16 @@ const ItinerarySchema = new mongoose.Schema({
     }
   ],
   gentem: { type: String },
-  Booking: [
-    {
-      key: { type: String },
-      description: { type: String }
-    }
-  ],
-  Cancellation: [
-    {
-      key: { type: String },
-      description: { type: String }
-    }
-  ],
+  Booking: {
+    type: String,
+ 
+    required: true
+  },
+  Cancellation:{
+    type: String,
+   
+    required: true
+  },
   FAQ: [
     {
       question: { type: String },

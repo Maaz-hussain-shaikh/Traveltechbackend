@@ -2,7 +2,6 @@ const express = require("express");
 const multer = require('multer');
 const {deleteimgs,uploadImage} = require("../controllers/imageController")
 const { createItinerary, getItineraries,getCard, login,Getstatistic,deleteItinerary} = require("../controllers/itineraryController");
-
 const authtoken=require("../config/authtoken")
 const upload = multer({ storage: multer.memoryStorage() });
 
