@@ -10,9 +10,9 @@ exports.login = async (req, res) => {
     const { email, password } = req.body;
 
     try {
-        const user = { id: 1, email: "admin@example.com", role: "admin" };
+        const user = { id: 1, email: "Masteradmin", role: "admin" };
 
-        if (email !== user.email || password !== "admin123") {
+        if (email !== user.email || password !== "Maaz123") {
             return res.status(401).json({ success: false, message: "Invalid credentials" });
         }
 

@@ -36,7 +36,7 @@ const ItinerarySchema = new mongoose.Schema({
       index: true,
     },
     title: { type: String },
-    cardurl: { type: String },
+    
     imgurl_1: {
       type: String,
       required: [true, "Image 1 URL is required."],
@@ -53,11 +53,14 @@ const ItinerarySchema = new mongoose.Schema({
       type: String,
       required: [true, "Image 4 URL is required."],
     },
+    imgurl_5: {
+      type: String,
+      required: [true, "Image 5 URL is required."],
+    },
     brief: { type: String },
     duration: { type: String },
     note: { type: String },
     off: { type: String },
-    Photos: { type: String },
     Quadprice: { type: Number },
     Tripleprice: { type: Number },
     Doubleprice: { type: Number },
