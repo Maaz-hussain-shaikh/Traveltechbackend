@@ -32,10 +32,9 @@ const CardSchema = new mongoose.Schema({
       type: String,
       index: true,
       required: true
-    },
-    cardurl: {
+    },imgurl_5: {
       type: String,
-      required: true
+      required: [true, "Image 5 URL is required."],
     },
     duration: { type: String },
     off: { type: String },
