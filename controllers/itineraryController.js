@@ -31,9 +31,8 @@ exports.login = async (req, res) => {
 
 
 exports.Getstatistic = async (req, res) => {
-    try {
-        const totalItineraries = await Itinerary.countDocuments(); // ✅ Total documents count
-        const totalCard = await Card.countDocuments();
+    try {     
+        const totalCard = await Card.countDocuments();// ✅ Total documents count
         res.status(200).json({ 
             success: true, 
             totalItineraries ,

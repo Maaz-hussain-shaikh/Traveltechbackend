@@ -9,13 +9,13 @@ const router = express.Router();
 
 // =========all POST req====
 router.post("/login", login);
-router.post("/add", createItinerary);
-router.post("/addimgs",upload.single("image"),uploadImage);
+router.post("/add",authtoken, createItinerary);
+router.post("/addimgs",authtoken,upload.single("image"),uploadImage);
 
 // =============all get req========
 router.get("/Getstatistic", Getstatistic);
-router.get("/Information/:id",authtoken, getItineraries);
-router.get("/getCards",authtoken, getCard);
+router.get("/Information/:id", getItineraries);
+router.get("/getCards", getCard);
 
 // =======all delete request ===========
 router.delete("/deleteimgs",authtoken,deleteimgs);
