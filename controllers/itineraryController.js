@@ -115,7 +115,8 @@ exports.getCard = async (req, res) => {
             country: 1,
             specialEvent: 1,
             title: 1,
-            imgurl_5: 1,
+            imgurl_1: 1,
+            imgurl_2: 1,
             duration: 1,
             off: 1,
             price: 1
