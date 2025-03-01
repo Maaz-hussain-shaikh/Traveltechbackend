@@ -87,9 +87,9 @@ const ItinerarySchema = new mongoose.Schema({
     ],
     it: [
       {
-        Heading: { type: String },
-        Schedule: { type: String },
-        required: [true, "Itinerary is required."],
+        Heading: { type: String ,required: [true, "Itinerary is required."]},
+        Schedule: { type: String , required: [true, "Itinerary is required."]},
+        
       },
     ],
     inclusion: [
@@ -116,9 +116,9 @@ const ItinerarySchema = new mongoose.Schema({
     gentem: { type: String },
     Booking: [
       {
-        Heading: { type: String },
-        Terms: { type: String },
-        required: [true, "Cancellation policy is required."],
+        Heading: { type: String , required: [true, "Cancellation & Booking policy is required."], },
+        Terms: { type: String , required: [true, "Cancellation & Booking  policy is required."]},
+        
       }
     ],
     
