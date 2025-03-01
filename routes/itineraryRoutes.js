@@ -9,8 +9,8 @@ const router = express.Router();
 
 // =========all POST req====
 router.post("/login", login);
-router.post("/add",authtoken, createItinerary);
-router.post("/addimgs",authtoken,upload.single("image"),uploadImage);
+router.post("/add", createItinerary);
+router.post("/addimgs",upload.single("image"),uploadImage);
 
 // =============all get req========
 router.get("/Getstatistic", Getstatistic);

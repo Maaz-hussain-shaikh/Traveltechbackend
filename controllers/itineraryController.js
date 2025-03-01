@@ -64,7 +64,8 @@ exports.createItinerary = async (req, res) => {
             country: savedItinerary.country,
             specialEvent: savedItinerary.specialEvent,
             title: savedItinerary.title,
-            imgurl_5: savedItinerary.imgurl_5,
+            imgurl_1: savedItinerary.imgurl_1,
+            imgurl_2: savedItinerary.imgurl_2,
             duration: savedItinerary.duration,
             off: savedItinerary.off,
             price: savedItinerary.price
