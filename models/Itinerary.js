@@ -22,12 +22,10 @@ const ItinerarySchema = new mongoose.Schema({
     },
     specialEvent: {
       type: String,
-      required: [true, "Special event is required."],
       index: true,
     },
     tag: {
       type: String,
-      required: [true, "Tag is required."],
       index: true,
     },
     typeoftrip: {

@@ -22,7 +22,7 @@ exports.uploadImage = async (req, res) => {
         const uploadOptions = {
             resource_type: 'auto',
             folder: req.body.folder,// Yeh woh folder hai jahan image save hogi
-            quality: 'auto:good',       // Compression (60-80% quality)
+            quality: 'auto:best',       // Compression (60-80% quality)
             fetch_format: 'auto'
         };
 
